@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Click It</title>
+    </head>
+    <style type="text/css">
+	body {
+    min-width: 200px;
+    min-height: 200px;
+  }
+	button {
+    margin: 5px;
+  }
+  .content {
+    margin-top: 10px
+  }
+    </style>
+    <body>
+      <h3>Default Templates:</h3>
+      <div class="content">
+        <button id="suspend">Suspend</button>
+        <button id="close">Close</button>
+      </div>
+      <h3>User Templates:</h3>
+      <div class="content">
+        <input type="text" id="content" />
+        <input type="checkbox" id="forSuspend">For Suspend<br>
+        <input type="checkbox" id="forClose">For Close<br>
+        <button id="new">Create New</button>
+      </div>
+    </body>
+    <script src="js/popup.js"></script>
+</html>
