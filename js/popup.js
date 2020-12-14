@@ -16,6 +16,26 @@ function isSnow(url) {
 	}
 }
 
+document.getElementById("getAllTab").addEventListener("click", () => openAllTab(event ,'allTemplates'), false)
+document.getElementById("createCustomTab").addEventListener("click", () => openAllTab(event, 'createCustomTemplate'), false)
+
+function openAllTab(evt, tabName) {
+	var i, tabcontent, tablinks;
+	tabcontent = document.getElementsByClassName("tabcontent");
+	for (i = 0; i < tabcontent.length; i++) {
+		tabcontent[i].style.display = "none";
+	}
+	tablinks = document.getElementsByClassName("tablinks");
+	for (i = 0; i < tablinks.length; i++) {
+		tablinks[i].className = tablinks[i].className.replace(" active", "");
+	}
+	document.getElementById(tabName).style.display = "block";
+	evt.currentTarget.className += " active";
+}
+
+
+document.getElementById("getAllTab").click();
+
 document.addEventListener('DOMContentLoaded', function() {
 document.getElementById("suspend").addEventListener("click", onclickSubpend, false)
 

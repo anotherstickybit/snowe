@@ -1,32 +1,69 @@
 <!doctype html>
 <html>
     <head>
-        <title>Click It</title>
+        <title>Snowe</title>
     </head>
     <style type="text/css">
-	body {
-    min-width: 200px;
-    min-height: 200px;
-  }
-	button {
-    margin: 5px;
-  }
-  .content {
-    margin-top: 10px
-  }
-    </style>
+      	body {
+          min-width: 400px;
+          min-height: 150px;
+        }
+      	button {
+          margin: 5px;
+        }
+        .content {
+          margin-top: 10px
+        }
+        .tab {
+        overflow: hidden;
+        border: 1px solid #ccc;
+        background-color: #f1f1f1;
+        }
+        .tab button {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 15px;
+      }
+      .tab button:hover {
+        background-color: #ddd;
+      }
+      .tab button.active {
+        background-color: #ccc;
+      }
+      .tabcontent {
+        display: none;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-top: none;
+      }
+  </style>
     <body>
-      <h3>Default Templates:</h3>
-      <div class="content">
-        <button id="suspend">Suspend</button>
-        <button id="close">Close</button>
+      <div class="tab">
+        <button id="getAllTab" class="tablinks">Templates</button>
+        <button id="createCustomTab" class="tablinks">Add Custom Template</button>
       </div>
-      <h3>User Templates:</h3>
-      <div class="content">
-        <input type="text" id="content" />
-        <input type="checkbox" id="forSuspend">For Suspend<br>
-        <input type="checkbox" id="forClose">For Close<br>
-        <button id="new">Create New</button>
+      <div id="allTemplates" class="tabcontent">
+        <h3>Default Templates:</h3>
+        <div class="content">
+          <button id="suspend">Suspend</button>
+          <button id="close">Close</button>
+        </div>
+      </div>
+      <div id="createCustomTemplate" class="tabcontent">
+        <h3>User Templates:</h3>
+        <div class="content">
+          <div>
+            <input type="text" id="content" />
+          </div>
+          <input type="checkbox" id="forSuspend">For Suspend<br>
+          <input type="checkbox" id="forClose">For Close<br>
+          <button id="new">Create New</button>
+        </div>
       </div>
     </body>
     <script src="js/popup.js"></script>
