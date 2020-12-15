@@ -10,6 +10,7 @@
         }
       	button {
           margin: 5px;
+          font-size: 14px;
         }
         .content {
           margin-top: 10px
@@ -41,6 +42,9 @@
         border: 1px solid #ccc;
         border-top: none;
       }
+      .fields {
+        margin: 5px
+      }
   </style>
     <body>
       <div class="tab">
@@ -48,20 +52,26 @@
         <button id="createCustomTab" class="tablinks">Add Custom Template</button>
       </div>
       <div id="allTemplates" class="tabcontent">
-        <h3>Default Templates:</h3>
+        <h3>Templates:</h3>
+        <div class="content" id="userTemplates"></div>
         <div class="content">
-          <button id="suspend">Suspend</button>
-          <button id="close">Close</button>
+          <button id="suspend">Suspend Default</button>
+          <button id="close">Close Default</button>
         </div>
       </div>
       <div id="createCustomTemplate" class="tabcontent">
-        <h3>User Templates:</h3>
+        <h3>Add Custom:</h3>
         <div class="content">
-          <div>
-            <input type="text" id="content" />
+          Name:
+          <div class="fields">
+            <input type="text" id="templateName" />
           </div>
-          <input type="checkbox" id="forSuspend">For Suspend<br>
-          <input type="checkbox" id="forClose">For Close<br>
+          Text:
+          <div class="fields">
+            <textarea id="commentText"></textarea>
+          </div>
+          <input type="checkbox" class="checkboxes" id="forSuspend">For Suspend<br>
+          <input type="checkbox" class="checkboxes" id="forClose">For Close<br>
           <button id="new">Create New</button>
         </div>
       </div>

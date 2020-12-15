@@ -15,7 +15,8 @@
     "48": "icons/s.png",
     "128": "icons/s.png" },
 	"permissions": [
-		"activeTab"
+		"activeTab",
+		"storage"
 	],
 	"content_scripts": [
 		{
