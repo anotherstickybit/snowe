@@ -52,9 +52,10 @@
         <button id="createCustomTab" class="tablinks">Add Custom Template</button>
       </div>
       <div id="allTemplates" class="tabcontent">
-        <h3>Templates:</h3>
+        <h3>User Templates:</h3>
         <div class="content" id="userTemplates"></div>
         <div class="content">
+          <h3>Standard:</h3>
           <button id="suspend">Suspend Default</button>
           <button id="close">Close Default</button>
         </div>
@@ -64,7 +65,7 @@
         <div class="content">
           Name:
           <div class="fields">
-            <input type="text" id="templateName" />
+            <input type="text" maxlength="15" id="templateName" />
           </div>
           Text:
           <div class="fields">
@@ -73,6 +74,9 @@
           <input type="checkbox" class="checkboxes" id="forSuspend">For Suspend<br>
           <input type="checkbox" class="checkboxes" id="forClose">For Close<br>
           <button id="new">Create New</button>
+          <div>
+            <button id="clearAllUserTemplates">Clear All Custom Templates</button>
+          </div>
         </div>
       </div>
     </body>

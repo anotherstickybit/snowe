@@ -61,7 +61,6 @@ function onClickAddComment(message) {
 document.getElementById("getAllTab").click();
 
 document.addEventListener('DOMContentLoaded', function() {
-	// chrome.storage.local.clear()
 	chrome.storage.local.get(null, function(items) {
 		for (key in items) {
 			if (key.includes("-suspend")) {
@@ -82,6 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	document.getElementById("forSuspend").checked = true
 	document.getElementById("forSuspend").addEventListener("change", () => onChange(document.getElementById("forSuspend")), false)
 	document.getElementById("forClose").addEventListener("change", () => onChange(document.getElementById("forClose")), false)
+	document.getElementById("clearAllUserTemplates").addEventListener("click", clearUserTemplates, false)
+
+	function clearUserTemplates() {
+		chrome.storage.local.clear()
+	}
 
 	function onClickNew() {
 
@@ -89,6 +93,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		let closeCheck = document.getElementById("forClose")
 		let name = document.getElementById("templateName").value
 		let text = document.getElementById("commentText").value
+		if (name === "" || text === "") {
+			alert("One of fields is empty")
+			return
+		}
 		if (suspendCheck.checked) {
 			name += "-suspend"
 			chrome.storage.local.set({[name]: text})
