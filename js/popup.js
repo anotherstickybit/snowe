@@ -109,19 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function onChange(input) {
 		var checkboxes = document.getElementsByClassName("checkboxes")
-    	for(var i = 0; i < checkboxes.length; i++)
-    	{
-    		if(checkboxes[i].checked == true)
-    		{
+    	for(var i = 0; i < checkboxes.length; i++) {
+    		if(checkboxes[i].checked == true) {
     			checkboxes[i].checked = false
     		}
     	}
-    	if(input.checked == true)
-    	{
+    	if(input.checked == true) {
     		input.checked = false
     	}
-    	else
-    	{
+    	else {
     		input.checked = true
     	}
 	}
